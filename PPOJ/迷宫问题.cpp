@@ -13,7 +13,7 @@ typedef struct point
 };
 int ex,ey,estep;
 
-void BFS(int x,int y)
+void BFS(int x,int y,int k)
 {
 	queue<point> q;
 	point tmp;
@@ -32,6 +32,10 @@ void BFS(int x,int y)
 				if(nowx==ex&&nowy==ey)
 				{
 					estep=n_step;
+					if(estep<=k)
+						cout<<"YES"<<endl;
+					else
+						cout<<"NO"<<endl;
 					return;
 				}
 				vis[nowx][nowy]=true;
